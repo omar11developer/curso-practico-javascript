@@ -10,6 +10,14 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <style>
+      .cajas{
+        border-right: 1px solid #cccbcb;
+        
+        margin-top: 15px;
+        
+      }
+    </style>
     <title>Figuras</title>
   </head>
   <body>
@@ -17,21 +25,98 @@
       <div class="row">
         <div class="col-lg-12">
           <header>
-            <h1 class="display-4 text-center">Figuras geométricas</h1>
-            <h4 class="mt-4 ">Este es el primer taller del curso de 
-             <small class="text-muted">JavaScript</small>
+            <h1 class="display-4 text-center mt-4">Figuras geométricas</h1>
+            <h4 class="mt-4">
+              Este es el primer taller del curso de
+              <small class="text-muted">JavaScript</small>
             </h4>
           </header>
           <section>
-            <form>
-                <label for="InputCuadrado">Escribe cuanto mide cada lado de tu cuadrado:</label>
-                <input id="InputCuadrado" type="number" />
-                <button onclick="calcularPerimetroCuadrado()" class="btn btn-primary" type="button">Calcular el perimetro</button>
-                <button onclick="calcularAreaCuadrado()" class="btn btn-success" type="button">Calcular el area</button>
-            </form>
+           
           </section>
+          <div class="container">
+            <div class="row">
+              <div class="col cajas">
+                <form >
+                  <h1 class="display-5 text-center">Calculos de un Cuadrado</h1>
+                  <label class="mb-3 mt-3" for="InputCuadrado"
+                    >Escribe cuanto mide cada lado de tu cuadrado:</label
+                  >
+                  <input class="form-control mb-3" id="InputCuadrado" type="number" />
+                  <button
+                    onclick="calcularPerimetroCuadrado()"
+                    class="btn btn-primary w-100 mb-2"
+                    type="button"
+                  >
+                    Calcular el perimetro
+                  </button>
+                  <button
+                    onclick="calcularAreaCuadrado()"
+                    class="btn btn-success w-100 mb-4"
+                    type="button"
+                  >
+                    Calcular el area
+                  </button>
+                </form>
+              </div>
+              <div class="col cajas">
+                <form >
+                  <h1 class="display-5 text-center">Calculos de un Triangulo</h1>
+                  
+                  <label class="mb-3 mt-3" for="InputLado1"
+                    >Escribe cuanto mide el primer lado del Triangulo:</label
+                  >
+                  <input class="form-control mb-3" id="InputLado1" type="number" />
+                  <label class="mb-3 mt-3" for="InputLado2"
+                    >Escribe cuanto mide el segundo lado del Triangulo:</label
+                  >
+                  <input class="form-control mb-3" id="InputLado2" type="number" />
+                  <label class="mb-3 mt-3" for="InputLado3"
+                    >Escribe cuanto mide la base del Triangulo:</label
+                  >
+                  <input class="form-control mb-3" id="InputBase" type="number" />
+                  <button
+                    onclick="calcularPerimetroTriangulo()"
+                    class="btn btn-primary w-100 mb-2"
+                    type="button"
+                  >
+                    Calcular el perimetro
+                  </button>
+                  <button
+                    onclick="calcularAreaCuadrado()"
+                    class="btn btn-success w-100 mb-4"
+                    type="button"
+                  >
+                    Calcular el area
+                  </button>
 
-         
+                  <p class="" id="resultadoTriangulo"></p>
+                </form>
+              </div>
+              <div class="col cajas">
+                <form >
+                  <h1 class="display-5 text-center">Calculos de un Circulo</h1>
+                <label class="mb-3 mt-3" for="InputCirculo"
+                  >Escribe cuanto mide el radio del circulo:</label
+                >
+                <input class="form-control mb-3" id="InputCirculo" type="number" />
+                <button
+                  onclick="calcularPerimetroCuadrado()"
+                  class="btn btn-primary w-100 mb-2"
+                  type="button"
+                >
+                  Calcular el perimetro
+                </button>
+                <button
+                  onclick="calcularAreaCuadrado()"
+                  class="btn btn-success w-100 mb-4"
+                  type="button"
+                >
+                  Calcular el area
+                </button>
+              </form></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
