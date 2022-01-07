@@ -1,131 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-    <style>
-      .cajas{
-        border-right: 1px solid #cccbcb;
-        
-        margin-top: 15px;
-        
-      }
-    </style>
-    <title>Figuras</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <header>
-            <h1 class="display-4 text-center mt-4">Figuras geométricas</h1>
-            <h4 class="mt-4">
-              Este es el primer taller del curso de
-              <small class="text-muted">JavaScript</small>
-            </h4>
-          </header>
-          <section>
-           
-          </section>
-          <div class="container">
-            <div class="row">
-              <div class="col cajas">
-                <form >
-                  <h1 class="display-5 text-center">Calculos de un Cuadrado</h1>
-                  <label class="mb-3 mt-3" for="InputCuadrado"
-                    >Escribe cuanto mide cada lado de tu cuadrado:</label
-                  >
-                  <input class="form-control mb-3" id="InputCuadrado" type="number" />
-                  <button
-                    onclick="calcularPerimetroCuadrado()"
-                    class="btn btn-primary w-100 mb-2"
-                    type="button"
-                  >
-                    Calcular el perimetro
-                  </button>
-                  <button
-                    onclick="calcularAreaCuadrado()"
-                    class="btn btn-success w-100 mb-4"
-                    type="button"
-                  >
-                    Calcular el area
-                  </button>
-                </form>
-              </div>
-              <div class="col cajas">
-                <form >
-                  <h1 class="display-5 text-center">Calculos de un Triangulo</h1>
-                  
-                  <label class="mb-3 mt-3" for="InputLado1"
-                    >Escribe cuanto mide el primer lado del Triangulo:</label
-                  >
-                  <input class="form-control mb-3" id="InputLado1" type="number" />
-                  <label class="mb-3 mt-3" for="InputLado2"
-                    >Escribe cuanto mide el segundo lado del Triangulo:</label
-                  >
-                  <input class="form-control mb-3" id="InputLado2" type="number" />
-                  <label class="mb-3 mt-3" for="InputLado3"
-                    >Escribe cuanto mide la base del Triangulo:</label
-                  >
-                  <input class="form-control mb-3" id="InputBase" type="number" />
-                  <button
-                    onclick="calcularPerimetroTriangulo()"
-                    class="btn btn-primary w-100 mb-2"
-                    type="button"
-                  >
-                    Calcular el perimetro
-                  </button>
-                  <button
-                    onclick="calcularAreaCuadrado()"
-                    class="btn btn-success w-100 mb-4"
-                    type="button"
-                  >
-                    Calcular el area
-                  </button>
 
-                  <p class="" id="resultadoTriangulo"></p>
-                </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <!-- CSS only -->
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <style>
+    .cajas {
+      border-right: 8px solid #f2f2f2;
+      border-radius: 5px;
+      background: #fff;
+      margin-top: 15px;
+    }
+
+    body {
+      background: #f2f2f2;
+    }
+  </style>
+  <title>Figuras</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <header>
+          <h1 class="display-4 text-center mt-4">Figuras geométricas</h1>
+          <h4 class="mt-4 text-center">
+            Este es el primer taller del curso de
+            <small class="text-muted">JavaScript</small>
+          </h4>
+        </header>
+        <section></section>
+        <div class="container">
+          <div class="row">
+            <div class="col cajas">
+              <form>
+                <h1 class="display-5 text-center">Calculos de un Cuadrado</h1>
+                <center><i class="bi bi-square "><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                      fill="currentColor" class="bi bi-square" viewBox="0 0 16 16">
+                      <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                    </svg></i></center>
+                <div class="accordion accordion-flush mt-2" id="accordionFlushExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne2" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Calcular el perimetro
+                      </button>
+                    </h2>
+                    <form>
+                      <div id="flush-collapseOne2" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample2">
+                        <div class="accordion-item">
+                          <label class="mb-3 mt-3" for="inputRadio">Escribe cuanto mide el radio del circulo</label>
+                          <input class="form-control mb-3" id="inputRadio" type="number" />
+
+                          <button onclick="calcularPerimetroCirculo()" class="btn btn-primary w-100 mb-2" type="button">
+                            Calcular el perimetro
+                          </button>
+                          <p class="mt-2" id="resultadoCirculoPerimetro"></p>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                        Calcular el area
+                      </button>
+                    </h2>
+                    <form>
+                      <div id="collapseTwo2" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample2">
+                        <div class="accordion-body">
+                          <label class="mb-3 mt-3" for="inputRadio">Escribe cuanto mide el radio del circulo</label>
+                          <input class="form-control mb-3" id="inputRadio2" type="number" />
+
+                          <button onclick="calcularAreaCirculo()" class="btn btn-success w-100 mb-2" type="button">
+                            Calcular el area
+                          </button>
+                          <p class="mt-2" id="resultadoCirculoArea"></p>
+
+
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </form>
+              </form>
+            </div>
+            <div class="col cajas">
+              <h1 class="display-5 text-center">Calculos de un Triangulo</h1>
+              <center><i class="bi bi-triangle "><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                    fill="currentColor" class="bi bi-triangle" viewBox="0 0 16 16">
+                    <path
+                      d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z" />
+                  </svg></i></center>
+              <div class="accordion accordion-flush mt-2" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Calcular el perimetro
+                    </button>
+                  </h2>
+                  <form>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                      data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-item">
+                        <label class="mb-3 mt-3" for="InputLado1">Escribe cuanto mide el primer lado del
+                          Triangulo:</label>
+                        <input class="form-control mb-3" id="InputLado1" type="number" />
+                        <label class="mb-3 mt-3" for="InputLado2">Escribe cuanto mide el segundo lado del
+                          Triangulo:</label>
+                        <input class="form-control mb-3" id="InputLado2" type="number" />
+                        <label class="mb-3 mt-3" for="InputLado3">Escribe cuanto mide la base del Triangulo:</label>
+                        <input class="form-control mb-3" id="InputBase" type="number" />
+                        <button onclick="calcularPerimetroTriangulo()" class="btn btn-primary w-100 mb-2" type="button">
+                          Calcular el perimetro
+                        </button>
+                        <p class="mt-2" id="resultadoTriangulo"></p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Calcular el area
+                    </button>
+                  </h2>
+                  <form>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                      data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <label class="mb-3 mt-3" for="inputAltura">Escribe la altura del
+                          Triangulo:</label>
+                        <input class="form-control mb-3" id="inputAltura" type="number" />
+
+                        <label class="mb-3 mt-3" for="inputBase2">Escribe cuanto mide la base del Triangulo:</label>
+                        <input class="form-control mb-3" id="inputBase2" type="number" />
+                        <p class="mt-2" id="resultadoTrianguloArea"></p>
+                        <button onclick="calcularAreatriangulo()" class="btn btn-success w-100 mb-4" type="button">
+                          Calcular el area
+                        </button>
+
+
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
-              <div class="col cajas">
-                <form >
-                  <h1 class="display-5 text-center">Calculos de un Circulo</h1>
-                <label class="mb-3 mt-3" for="InputCirculo"
-                  >Escribe cuanto mide el radio del circulo:</label
-                >
-                <input class="form-control mb-3" id="InputCirculo" type="number" />
-                <button
-                  onclick="calcularPerimetroCuadrado()"
-                  class="btn btn-primary w-100 mb-2"
-                  type="button"
-                >
-                  Calcular el perimetro
-                </button>
-                <button
-                  onclick="calcularAreaCuadrado()"
-                  class="btn btn-success w-100 mb-4"
-                  type="button"
-                >
-                  Calcular el area
-                </button>
-              </form></div>
+
+
+            </div>
+            <div class="col cajas">
+              <form>
+                <h1 class="display-5 text-center">Calculos de un Circulo</h1>
+
+                <center><i class="bi bi-circle "><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"
+                      fill="currentColor" class="bi bi-circle " viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    </svg></i></center>
+                <div class="accordion accordion-flush mt-2" id="accordionFlushExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne2" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Calcular el perimetro
+                      </button>
+                    </h2>
+                    <form>
+                      <div id="flush-collapseOne2" class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample2">
+                        <div class="accordion-item">
+                          <label class="mb-3 mt-3" for="inputRadio">Escribe cuanto mide el radio del circulo</label>
+                          <input class="form-control mb-3" id="inputRadio" type="number" />
+
+                          <button onclick="calcularPerimetroCirculo()" class="btn btn-primary w-100 mb-2" type="button">
+                            Calcular el perimetro
+                          </button>
+                          <p class="mt-2" id="resultadoCirculoPerimetro"></p>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                        Calcular el area
+                      </button>
+                    </h2>
+                    <form>
+                      <div id="collapseTwo2" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample2">
+                        <div class="accordion-body">
+                          <label class="mb-3 mt-3" for="inputRadio">Escribe cuanto mide el radio del circulo</label>
+                          <input class="form-control mb-3" id="inputRadio2" type="number" />
+
+                          <button onclick="calcularAreaCirculo()" class="btn btn-success w-100 mb-2" type="button">
+                            Calcular el area
+                          </button>
+                          <p class="mt-2" id="resultadoCirculoArea"></p>
+
+
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="figuras.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <script src="figuras.js"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
